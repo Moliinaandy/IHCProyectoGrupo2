@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b9f83b2bfb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="top-bar-contacto">
+                <div class="contacto">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span class="top-bar-contacto-texto">+51 123456789</span>
+                </div>
+                <div class="contacto">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="top-bar-contacto-texto">destinos@gmail.com</span>
+                </div>
+            </div>
+            <div class="top-bar-redes">
+                <div class="circulo-icon"><i class="fa-solid fa-user"></i></div>
+                <p class="enlace-ingreso-registro"><span class="opcion-ingreso" onclick="mostrarLoginInicio();"">Ingreso</span> / <span
+                        class=" opcion-registro" onclick="mostrarLoginRegistro();">Registro</span></p>
+                <div class="iconos-redes">
+                    <div class="circulo-icon"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="circulo-icon"><i class="fa-brands fa-twitter"></i></div>
+                    <div class="circulo-icon"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="circulo-icon"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+
+                <label for="fontSizeSelect">Tamaño del Texto:</label>
+                <select id="fontSizeSelect">
+                    <option value="12">12px</option>
+                    <option value="14">14px</option>
+                    <option value="16" selected>16px</option>
+                    <option value="18">18px</option>
+                    <option value="20">20px</option>
+                    <option value="22">22px</option>
+                    <option value="24">24px</option>
+                    <option value="26">26px</option>
+                    <option value="28">28px</option>
+                    <option value="30">30px</option>
+                    <option value="32">32px</option>
+                </select>
+            </div>
+        </div>
+    </header>
+    <div class="login-fondo">
+        <div class="login-logo">
+            <img src="recursos/logo2.png">
+        </div>
+        <div class="login-form">
+            <form id="iniciar-form">
+                <label for="usuario-inicio">Usuario:</label>
+                <input type="text" id="usuario-inicio" name="usuario-inicio" required>
+                <label for="clave-inicio">Contraseña:</label>
+                <input type="password" id="clave-inicio" name="clave-inicio" required>
+                <button type="submit">Iniciar sesión</button>
+                <span onclick="mostrarLoginRegistro();">¿No tienes una cuenta? Registrate</span>
+            </form>
+            <form id="registrar-form">
+                <label for="nombre-registro">Nombre:</label>
+                <input type="text" id="nombre-registro" name="nombre-registro" required>
+                <label for="correo-registro">Correo:</label>
+                <input type="email" id="correo-registro" name="correo-registro" required>
+                <label for="usuario-registro">Usuario:</label>
+                <input type="text" id="usuario-registro" name="usuario-registro" required>
+                <label for="clave-registro">Contraseña:</label>
+                <input type="password" id="clave-registro" name="clave-registro" required>
+                <button type="submit">Registrarse</button>
+                <span onclick="mostrarLoginInicio();">¿Ya tienes una cuenta? Inicia sesión</span>
+            </form>
+            <p id="error-message" class="error-message"></p>
+        </div>
+        <br>
+        <br>
+        <div class="login-promo">
+            <h1>Experiencias que estas a punto de poder vivir</h1>
+            <img src="recursos/promo.png">
+        </div>
+        <br>
+    </div>
+    <footer>
+        <div class="suscribir-fondo d-flex justify-content-center">
+            <div class="suscribir d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="suscribir-texto text-center text-white mb-3 mb-md-0">
+                    <h3>Suscribete para un descuento exclusivo del 30%</h3>
+                </div>
+                <div class="suscribir-email d-flex flex-column flex-md-row align-items-center">
+                    <input type="email" class="form-control mb-2 mb-md-0 mr-md-2">
+                    <input type="button" class="btn btn-light" value="Suscribirse" />
+                </div>
+            </div>
+        </div>
+        <div class="datos-fondo">
+            <div class="datos container">
+                <div class="row">
+                    <div class="descripcion col-md-3">
+                        <h2>Destinos</h2>
+                        <p>Contactate con nosotros y empieza una nueva experiencia inolvidable.</p>
+                    </div>
+                    <div class="conectate col-md-3">
+                        <h2>Conectate</h2>
+                        <p>+1 12345 67890</p>
+                        <p>destinos@gmail.com</p>
+                        <p>Los Olivos, 74354, Perú</p>
+                    </div>
+                    <div class="ig-imagenes col-md-3">
+                        <p>Siguenos en @Instagram</p>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(1).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(2).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(3).png" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(4).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(5).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(6).png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>© 2024 Todos los Derechos Reservados</p>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/b9f83b2bfb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body onload="verificarAcceso();">
+    <header>
+        <div class="top-bar d-flex flex-wrap justify-content-between align-items-center">
+            <div class="top-bar-contacto d-flex">
+                <div class="contacto d-flex align-items-center mr-3">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span class="top-bar-contacto-texto ml-2">+51 123456789</span>
+                </div>
+                <div class="contacto d-flex align-items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="top-bar-contacto-texto ml-2">destinos@gmail.com</span>
+                </div>
+            </div>
+            <div class="top-bar-redes d-flex align-items-center">
+                <div class="circulo-icon"><i class="fa-solid fa-user"></i></div>
+                <span id="logoutBtn" class="ml-2">Cerrar Sesión</span>
+                <div class="iconos-redes d-flex ml-3">
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-twitter"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+                <label for="fontSizeSelect" class="ml-3 mb-0">Tamaño del Texto:</label>
+                <select id="fontSizeSelect" class="ml-2 mb-0">
+                    <option value="12">12px</option>
+                    <option value="14">14px</option>
+                    <option value="16" selected>16px</option>
+                    <option value="18">18px</option>
+                    <option value="20">20px</option>
+                    <option value="22">22px</option>
+                    <option value="24">24px</option>
+                    <option value="26">26px</option>
+                    <option value="28">28px</option>
+                    <option value="30">30px</option>
+                    <option value="32">32px</option>
+                </select>
+            </div>
+        </div>
+        <div class="menu d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="recursos/logo.png" alt="Destinos" style="height: 80px;">
+            </div>
+            <div class="nav-bar">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mis-actividades.html">Mis Actividades</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="centro-de-ayuda.html">Centro de Ayuda</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link text-menu-seleccion"
+                                    href="landing-page-1.html">Landing Page</a></li>
+                            <li class="nav-item" id="dashboard-link"><a class="nav-link"
+                                    href="dashboard-1.html">Dashboard</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="landing-fondo container">
+        <section class="landing-cambiar text-center">
+            <a href="landing-page-1.html" class="opcion-landing">Landing 1</a>
+            <a href="landing-page-2.html" class="opcion-landing elegida-landing">Landing 2</a>
+        </section>
+
+        <section class="landing-encabezado">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="encabezado-info">
+                        <h2>Descubre la Aventura de tu Vida con <span>Destinos</span></h2>
+                        <p>Reserva tus actividades y vive experiencias inolvidables</p>
+                        <h2>¿Por Qué Elegirnos?</h2>
+                        <ul>
+                            <li>Actividades seguras y guiadas por expertos.</li>
+                            <li>Equipo de última generación incluido.</li>
+                            <li>Atractivos naturales impresionantes.</li>
+                            <li>Precios competitivos y descuentos especiales.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8 row">
+                    <div class="encabezado-img text-center col-md-7">
+                        <img src="recursos/tirolesa-1024x683.png" alt="tirolesa" class="img-fluid">
+                    </div>
+                    <div class="landing-actividades col-md-5">
+                        <div class="landing-ofertas">
+                            <div class="tarjeta-oferta">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <img src="recursos/oferta-tour-ingenio-xtremo.png"
+                                            alt="oferta de tour ingenio xtremo" class="img-fluid">
+                                    </div>
+                                    <div class="col-7 div-info">
+                                        <div class="info-oferta">
+                                            <h6>Tour Ingenio Xtremo</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tarjeta-oferta">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <img src="recursos/oferta-tour-nevado-huaytapallana.png"
+                                            alt="oferta de Tour Nevado Huaytapallana" class="img-fluid">
+                                    </div>
+                                    <div class="col-7 div-info">
+                                        <div class="info-oferta">
+                                            <h6>Tour Nevado Huaytapallana</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tarjeta-oferta">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <img src="recursos/oferta-tour-laguna-de-paca.png"
+                                            alt="oferta de Tour Laguna de Paca" class="img-fluid">
+                                    </div>
+                                    <div class="col-7 div-info">
+                                        <div class="info-oferta">
+                                            <h6 ">Tour Laguna de Paca</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class=" landing-testimonios text-center">
+
+                                                <h4 class="text-center col-md-12">Lo Que Dicen Nuestros Aventureros</h4>
+                                                <div class="testimonios row col-md-10 text-center">
+                                                    <div class="col-md-6 mb-4">
+                                                        <div class="card testimonio-card">
+                                                            <div class="card-body d-flex">
+                                                                <img src="recursos/testimonio1.png" alt="persona"
+                                                                    class="col-md-3 col-5">
+                                                                <div>
+                                                                    <p class="card-text">"Una experiencia increíble
+                                                                        que jamás olvidaré"</p>
+                                                                    <p class="card-text"><span
+                                                                            class="font-weight-bold">- Sandra
+                                                                            Dominguez</span></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="testimonios col-md-6 mb-4">
+                                                        <div class="card testimonio-card">
+                                                            <div class="card-body d-flex">
+                                                                <img src="recursos/testimonio2.png" alt="persona"
+                                                                    class="col-md-3 col-5">
+                                                                <div>
+                                                                    <p class="card-text">"Los guías fueron
+                                                                        excelentes y muy profesionales"</p>
+                                                                    <p class="card-text"><span
+                                                                            class="font-weight-bold">- Juan
+                                                                            Salazar</span></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+        </section>
+
+    </main>
+    <footer>
+        <div class="suscribir-fondo d-flex justify-content-center">
+            <div class="suscribir d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="suscribir-texto text-center text-white mb-3 mb-md-0">
+                    <h3>Suscribete para un descuento exclusivo del 30%</h3>
+                </div>
+                <div class="suscribir-email d-flex flex-column flex-md-row align-items-center">
+                    <input type="email" class="form-control mb-2 mb-md-0 mr-md-2">
+                    <input type="button" class="btn btn-light" value="Suscribirse" />
+                </div>
+            </div>
+        </div>
+        <div class="datos-fondo">
+            <div class="datos container">
+                <div class="row">
+                    <div class="descripcion col-md-3">
+                        <h2>Destinos</h2>
+                        <p>Contactate con nosotros y empieza una nueva experiencia inolvidable.</p>
+                    </div>
+                    <div class="enlaces col-md-3">
+                        <h2>Enlaces</h2>
+                        <a href="inicio.html">Inicio</a><br><br>
+                        <a href="reservas.html">Reservas</a><br><br>
+                        <a href="mis-actividades.html">Mis Actividades</a><br><br>
+                        <a href="sobre-nosotros.html">Sobre Nosotros</a><br><br>
+                        <a href="centro-de-ayuda.html">Centro de Ayuda</a><br><br>
+                        <a href="landing-page-1.html">Landing Page</a><br><br>
+                        <a id="dashboard-link-footer" href="dashboard-1.html">Dashboard</a>
+                    </div>
+                    <div class="conectate col-md-3">
+                        <h2>Conectate</h2>
+                        <p>+1 12345 67890</p>
+                        <p>destinos@gmail.com</p>
+                        <p>Los Olivos, 74354, Perú</p>
+                    </div>
+                    <div class="ig-imagenes col-md-3">
+                        <p>Siguenos en @Instagram</p>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(1).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(2).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(3).png" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(4).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(5).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(6).png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>© 2024 Todos los Derechos Reservados</p>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+</html>

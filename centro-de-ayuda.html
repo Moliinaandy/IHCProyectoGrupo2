@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro de ayuda - Destinos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/b9f83b2bfb.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="verificarAcceso();">
+    <header>
+        <div class="top-bar d-flex flex-wrap justify-content-between align-items-center">
+            <div class="top-bar-contacto d-flex">
+                <div class="contacto d-flex align-items-center mr-3">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span class="top-bar-contacto-texto ml-2">+51 123456789</span>
+                </div>
+                <div class="contacto d-flex align-items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="top-bar-contacto-texto ml-2">destinos@gmail.com</span>
+                </div>
+            </div>
+            <div class="top-bar-redes d-flex align-items-center">
+                <div class="circulo-icon"><i class="fa-solid fa-user"></i></div>
+                <span id="logoutBtn" class="ml-2">Cerrar Sesión</span>
+                <div class="iconos-redes d-flex ml-3">
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-twitter"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+                <label for="fontSizeSelect" class="ml-3 mb-0">Tamaño del Texto:</label>
+                <select id="fontSizeSelect" class="ml-2 mb-0">
+                    <option value="12">12px</option>
+                    <option value="14">14px</option>
+                    <option value="16" selected>16px</option>
+                    <option value="18">18px</option>
+                    <option value="20">20px</option>
+                    <option value="22">22px</option>
+                    <option value="24">24px</option>
+                    <option value="26">26px</option>
+                    <option value="28">28px</option>
+                    <option value="30">30px</option>
+                    <option value="32">32px</option>
+                </select>
+            </div>
+        </div>
+        <div class="menu d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="recursos/logo.png" alt="Destinos" style="height: 80px;">
+            </div>
+            <div class="nav-bar">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mis-actividades.html">Mis Actividades</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link text-menu-seleccion"
+                                    href="centro-de-ayuda.html">Centro de Ayuda</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="landing-page-1.html">Landing Page</a></li>
+                            <li class="nav-item" id="dashboard-link"><a class="nav-link"
+                                    href="dashboard-1.html">Dashboard</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div id="content" class="container my-5">
+        <h2 class="titulo">Preguntas Frecuentes</h2>
+        <div class="faq-section">
+            <div class="faq-item mb-3">
+                <div class="faq-header">
+                    <input type="checkbox" id="faq1" class="faq-checkbox">
+                    <label for="faq1" class="faq-question">¿Cómo puedo reservar una actividad turística en
+                        Destinos?</label>
+                </div>
+                <div class="faq-answer">
+                    <p>Para reservar una actividad, simplemente navega por nuestra lista de actividades disponibles
+                        desde <a href="reservas.html">Reservas</a>, selecciona la que te interese, elige la fecha y
+                        horario, y sigue los pasos para completar la reserva. Recibirás una confirmación por correo
+                        electrónico una vez que el proceso esté completo.</p>
+                </div>
+            </div>
+            <div class="faq-item mb-3">
+                <div class="faq-header">
+                    <input type="checkbox" id="faq2" class="faq-checkbox">
+                    <label for="faq2" class="faq-question">¿Qué métodos de pago aceptan?</label>
+                </div>
+                <div class="faq-answer">
+                    <p>Aceptamos diversas formas de pago, incluyendo tarjetas de crédito, débito, PayPal y
+                        transferencias bancarias. Todos los pagos se realizan de manera segura a través de nuestra
+                        plataforma.</p>
+                </div>
+            </div>
+            <div class="faq-item mb-3">
+                <div class="faq-header">
+                    <input type="checkbox" id="faq3" class="faq-checkbox">
+                    <label for="faq3" class="faq-question">¿Puedo cancelar o modificar mi reserva?</label>
+                </div>
+                <div class="faq-answer">
+                    <p>Sí, puedes cancelar o modificar tu reserva desde <a href="mis-actividades.html">Mis
+                            actividades</a>. Ten en cuenta que cada actividad tiene su propia política de cancelación,
+                        la cual puedes consultar en la descripción de la actividad. Si necesitas ayuda, puedes
+                        contactarnos directamente.</p>
+                </div>
+            </div>
+            <button class="btn btn-primary faq-toggle">Desplegar más preguntas</button>
+        </div>
+
+        <h2 class="titulo">¿Resolvió tu duda? Realiza tu Consulta</h2>
+        <form class="consulta-form">
+            <div class="form-group">
+                <label for="categoria">Categoría</label>
+                <select id="categoria" name="categoria" class="form-control">
+                    <option value="">Selecciona una categoría</option>
+                    <option value="reservas">Reservas</option>
+                    <option value="pagos">Pagos</option>
+                    <option value="cancelaciones">Cancelaciones</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="consulta">Consulta</label>
+                <textarea id="consulta" name="consulta" rows="4" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Enviar tu consulta</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <div class="suscribir-fondo d-flex justify-content-center">
+            <div class="suscribir d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="suscribir-texto text-center text-white mb-3 mb-md-0">
+                    <h3>Suscribete para un descuento exclusivo del 30%</h3>
+                </div>
+                <div class="suscribir-email d-flex flex-column flex-md-row align-items-center">
+                    <input type="email" class="form-control mb-2 mb-md-0 mr-md-2">
+                    <input type="button" class="btn btn-light" value="Suscribirse" />
+                </div>
+            </div>
+        </div>
+        <div class="datos-fondo">
+            <div class="datos container">
+                <div class="row">
+                    <div class="descripcion col-md-3">
+                        <h2>Destinos</h2>
+                        <p>Contactate con nosotros y empieza una nueva experiencia inolvidable.</p>
+                    </div>
+                    <div class="enlaces col-md-3">
+                        <h2>Enlaces</h2>
+                        <a href="inicio.html">Inicio</a><br><br>
+                        <a href="reservas.html">Reservas</a><br><br>
+                        <a href="mis-actividades.html">Mis Actividades</a><br><br>
+                        <a href="sobre-nosotros.html">Sobre Nosotros</a><br><br>
+                        <a href="centro-de-ayuda.html">Centro de Ayuda</a><br><br>
+                        <a href="landing-page-1.html">Landing Page</a><br><br>
+                        <a id="dashboard-link-footer" href="dashboard-1.html">Dashboard</a>
+                    </div>
+                    <div class="conectate col-md-3">
+                        <h2>Conectate</h2>
+                        <p>+1 12345 67890</p>
+                        <p>destinos@gmail.com</p>
+                        <p>Los Olivos, 74354, Perú</p>
+                    </div>
+                    <div class="ig-imagenes col-md-3">
+                        <p>Siguenos en @Instagram</p>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(1).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(2).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(3).png" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(4).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(5).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(6).png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>© 2024 Todos los Derechos Reservados</p>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+</html>

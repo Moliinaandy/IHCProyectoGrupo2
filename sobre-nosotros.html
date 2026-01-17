@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - Destinos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/b9f83b2bfb.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload="verificarAcceso();">
+    <header>
+        <div class="top-bar d-flex flex-wrap justify-content-between align-items-center">
+            <div class="top-bar-contacto d-flex">
+                <div class="contacto d-flex align-items-center mr-3">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span class="top-bar-contacto-texto ml-2">+51 123456789</span>
+                </div>
+                <div class="contacto d-flex align-items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="top-bar-contacto-texto ml-2">destinos@gmail.com</span>
+                </div>
+            </div>
+            <div class="top-bar-redes d-flex align-items-center">
+                <div class="circulo-icon"><i class="fa-solid fa-user"></i></div>
+                <span id="logoutBtn" class="ml-2">Cerrar Sesión</span>
+                <div class="iconos-redes d-flex ml-3">
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-twitter"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+                <label for="fontSizeSelect" class="ml-3 mb-0">Tamaño del Texto:</label>
+                <select id="fontSizeSelect" class="ml-2 mb-0">
+                    <option value="12">12px</option>
+                    <option value="14">14px</option>
+                    <option value="16" selected>16px</option>
+                    <option value="18">18px</option>
+                    <option value="20">20px</option>
+                    <option value="22">22px</option>
+                    <option value="24">24px</option>
+                    <option value="26">26px</option>
+                    <option value="28">28px</option>
+                    <option value="30">30px</option>
+                    <option value="32">32px</option>
+                </select>
+            </div>
+        </div>
+        <div class="menu d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="recursos/logo.png" alt="Destinos" style="height: 80px;">
+            </div>
+            <div class="nav-bar">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mis-actividades.html">Mis Actividades</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link text-menu-seleccion"
+                                    href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="centro-de-ayuda.html">Centro de Ayuda</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="landing-page-1.html">Landing Page</a></li>
+                            <li class="nav-item" id="dashboard-link"><a class="nav-link"
+                                    href="dashboard-1.html">Dashboard</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <div class="sobre-nosotros container">
+        <div class="row sobre-nosotros-section">
+            <h1 class="col-12 sobre-nosotros-title">Sobre Nosotros</h1>
+            <div class="sobre-nosotros-content d-flex flex-column flex-md-row">
+                <div class="sobre-nosotros-video col-md-6">
+                    <img src="recursos/sobre-nosotros.PNG" alt="Destinos" class="img-fluid">
+                </div>
+                <div class="sobre-nosotros-text col-md-6">
+                    <p>En <span class="destino">Destinos</span>, nos apasiona conectar a los viajeros
+                        con experiencias únicas y memorables en los lugares más hermosos y emocionantes del mundo.
+                        Ya sea que busques aventuras emocionantes, excursiones culturales, o escapadas relajantes,
+                        en Destinos encontrarás la actividad perfecta para hacer de tu viaje una experiencia
+                        inolvidable. Nos comprometemos a brindarte un servicio excepcional y a acompañarte
+                        en cada paso de tu aventura. ¡Explora con nosotros y descubre tu próximo destino favorito!</p>
+                    <div class="sobre-nosotros-audio">
+                        <audio src="recursos/destinos.m4a" controls play></audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mision-vision-container row">
+            <div class="mision ">
+                <h1 class=" col-12 mision-title">Misión</h1>
+                <div class="mision-text">
+                    <p>Nuestra misión es conectar a los viajeros con experiencias auténticas y
+                        memorables en todo el mundo. Nos esforzamos por ofrecer una plataforma
+                        fácil de usar y segura para planificar y reservar actividades turísticas
+                        de alta calidad, promoviendo el turismo sostenible y apoyando a las
+                        comunidades locales. Queremos hacer que cada viaje sea una aventura inolvidable,
+                        llena de descubrimientos y momentos especiales.</p>
+                    <audio class="mision-audio" src="recursos/mision.m4a" controls play></audio>
+                </div>
+            </div>
+            <div class="vision ">
+                <h1 class=" col-12 vision-title">Visión</h1>
+                <div class="vision-text ">
+                    <p>Nuestra visión es ser la plataforma líder en reservas de actividades turísticas,
+                        reconocida por nuestra calidad, confiabilidad y compromiso con el turismo sostenible.
+                        Aspiramos a transformar la manera en que las personas descubren y disfrutan de nuevas
+                        experiencias, creando un mundo donde cada viaje esté lleno de momentos inolvidables
+                        y conexiones significativas con culturas y lugares extraordinarios.</p>
+                    <audio class="vision-audio" src="recursos/vision.m4a" controls play></audio>
+                </div>
+            </div>
+        </div>
+        <div class="ubicanos-section row">
+            <h1 class="ubicanos-title col-12">Ubícanos</h1>
+            <img src="recursos/ubicanos.PNG" alt="Ubícanos" class="ubicanos-image col-12 img-fluid">
+        </div>
+        <div class="duenos-section row">
+            <h1 class="duenos-title col-12">Dueños</h1>
+            <div class="duenos-content d-flex flex-column flex-md-row col-12">
+                <div class="duenos-image col-md-6">
+                    <img src="recursos/dueño.PNG" alt="Dueños" class="img-fluid">
+                </div>
+                <div class="duenos-text col-md-6">
+                    <p>Ana López, la visionaria detrás de Destinos, es una apasionada viajera y emprendedora con más de
+                        una
+                        década de experiencia en la industria del turismo.
+                        Su amor por explorar nuevos lugares y su deseo de compartir estas experiencias con otros la
+                        inspiraron a
+                        crear Destinos, una plataforma diseñada para facilitar la reserva de actividades turísticas
+                        únicas y
+                        auténticas.
+                        Bajo su liderazgo, Destinos se ha comprometido a ofrecer un servicio excepcional y a colaborar
+                        con
+                        proveedores locales para fomentar el turismo sostenible y apoyar a las comunidades visitadas. La
+                        visión
+                        de Ana es simple pero poderosa: hacer que cada viaje sea una aventura única y accesible para
+                        todos.</p>
+                    <audio class="duenos-audio" src="recursos/owner.m4a" controls play></audio>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="suscribir-fondo d-flex justify-content-center">
+            <div class="suscribir d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="suscribir-texto text-center text-white mb-3 mb-md-0">
+                    <h3>Suscribete para un descuento exclusivo del 30%</h3>
+                </div>
+                <div class="suscribir-email d-flex flex-column flex-md-row align-items-center">
+                    <input type="email" class="form-control mb-2 mb-md-0 mr-md-2">
+                    <input type="button" class="btn btn-light" value="Suscribirse" />
+                </div>
+            </div>
+        </div>
+        <div class="datos-fondo">
+            <div class="datos container">
+                <div class="row">
+                    <div class="descripcion col-md-3">
+                        <h2>Destinos</h2>
+                        <p>Contactate con nosotros y empieza una nueva experiencia inolvidable.</p>
+                    </div>
+                    <div class="enlaces col-md-3">
+                        <h2>Enlaces</h2>
+                        <a href="inicio.html">Inicio</a><br><br>
+                        <a href="reservas.html">Reservas</a><br><br>
+                        <a href="mis-actividades.html">Mis Actividades</a><br><br>
+                        <a href="sobre-nosotros.html">Sobre Nosotros</a><br><br>
+                        <a href="centro-de-ayuda.html">Centro de Ayuda</a><br><br>
+                        <a href="landing-page-1.html">Landing Page</a><br><br>
+                        <a id="dashboard-link-footer" href="dashboard-1.html">Dashboard</a>
+                    </div>
+                    <div class="conectate col-md-3">
+                        <h2>Conectate</h2>
+                        <p>+1 12345 67890</p>
+                        <p>destinos@gmail.com</p>
+                        <p>Los Olivos, 74354, Perú</p>
+                    </div>
+                    <div class="ig-imagenes col-md-3">
+                        <p>Siguenos en @Instagram</p>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(1).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(2).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(3).png" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(4).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(5).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(6).png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>© 2024 Todos los Derechos Reservados</p>
+        </div>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
+
+</html>

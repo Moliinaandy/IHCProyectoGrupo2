@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/b9f83b2bfb.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body onload="verificarAcceso();">
+    <header>
+        <div class="top-bar d-flex flex-wrap justify-content-between align-items-center">
+            <div class="top-bar-contacto d-flex">
+                <div class="contacto d-flex align-items-center mr-3">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    <span class="top-bar-contacto-texto ml-2">+51 123456789</span>
+                </div>
+                <div class="contacto d-flex align-items-center">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span class="top-bar-contacto-texto ml-2">destinos@gmail.com</span>
+                </div>
+            </div>
+            <div class="top-bar-redes d-flex align-items-center">
+                <div class="circulo-icon"><i class="fa-solid fa-user"></i></div>
+                <span id="logoutBtn" class="ml-2">Cerrar Sesión</span>
+                <div class="iconos-redes d-flex ml-3">
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-twitter"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-youtube"></i></div>
+                    <div class="circulo-icon mx-1"><i class="fa-brands fa-instagram"></i></div>
+                </div>
+                <label for="fontSizeSelect" class="ml-3 mb-0">Tamaño del Texto:</label>
+                <select id="fontSizeSelect" class="ml-2 mb-0">
+                    <option value="12">12px</option>
+                    <option value="14">14px</option>
+                    <option value="16" selected>16px</option>
+                    <option value="18">18px</option>
+                    <option value="20">20px</option>
+                    <option value="22">22px</option>
+                    <option value="24">24px</option>
+                    <option value="26">26px</option>
+                    <option value="28">28px</option>
+                    <option value="30">30px</option>
+                    <option value="32">32px</option>
+                </select>
+            </div>
+        </div>
+        <div class="menu d-flex justify-content-between align-items-center">
+            <div class="logo">
+                <img src="recursos/logo.png" alt="Destinos" style="height: 80px;">
+            </div>
+            <div class="nav-bar">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item"><a class="nav-link" href="inicio.html">Inicio</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="reservas.html">Reservas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="mis-actividades.html">Mis Actividades</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="sobre-nosotros.html">Sobre Nosotros</a></li>
+                            <li class="nav-item"><a class="nav-link" href="centro-de-ayuda.html">Centro de Ayuda</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="landing-page-1.html">Landing Page</a></li>
+                            <li class="nav-item" id="dashboard-link text-menu-seleccion"><a class="nav-link"
+                                    href="dashboard-1.html">Dashboard</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <main class="dashboard-fondo">
+        <section class="landing-cambiar text-center">
+            <a href="dashboard-1.html" class="opcion-landing elegida-landing">Reservas</a>
+            <a href="dashboard-2.html" class="opcion-landing">Clientes</a>
+        </section>
+        <section class="graficos-fondo">
+            <div id="dashboard" class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <h2>Destinos más visitados</h2>
+                            <canvas id="radar-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <h2>Destinos menos seleccionados</h2>
+                            <canvas id="menos-seleccionados"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <h2>Cantidad de usuarios que ingresaron a la página por mes</h2>
+                            <canvas id="bar-chart"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <h2>Mes con más reservas</h2>
+                            <canvas id="line-chart"></canvas>
+                        </div>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                // Gráfico de Radar
+                var ctxRadar = document.getElementById('radar-chart').getContext('2d');
+                new Chart(ctxRadar, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Junin', 'Tarapoto', 'Cuzco', 'Nazca', 'Iquitos'],
+                        datasets: [{
+                            label: '# visitas',
+                            data: [80, 90, 90, 81, 80],
+                            fill: true,
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgb(75, 192, 192)',
+                            pointBackgroundColor: 'rgb(75, 192, 192)',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: 'rgb(75, 192, 192)'
+                        }]
+                    },
+                    options: {
+                        elements: {
+                            line: {
+                                tension: 0.0
+                            }
+                        }
+                    }
+                });
+
+                // Gráfico de Líneas
+                var ctxLine = document.getElementById('line-chart').getContext('2d');
+                new Chart(ctxLine, {
+                    type: 'line',
+                    data: {
+                        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Agos', 'Sep', 'Oct', 'Nov', 'Dic'],
+                        datasets: [{
+                            label: '# reservas (mil)',
+                            data: [9, 8, 5, 7, 5, 5, 4, 2, 1, 5, 7, 10],
+                            fill: false,
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.1
+                        }]
+                    }
+                });
+                // Destinos menos seleccionados
+                var ctxPie = document.getElementById('menos-seleccionados').getContext('2d');
+                new Chart(ctxPie, {
+                    type: 'pie',
+                    data: {
+                        labels: ['Arequipa', 'Puno', 'Chiclayo', 'Trujillo', 'Piura'],
+                        datasets: [{
+                            label: 'Número de Selecciones',
+                            data: [5, 3, 2, 1, 1],
+                            backgroundColor: [
+                                'rgba(54, 162, 235, 0.8)',
+                                'rgba(75, 192, 192, 0.8)',
+                                'rgba(116, 149, 187, 0.8)',
+                                'rgba(99, 215, 138, 0.8)',
+                                'rgba(88, 95, 221, 0.8)'
+                            ],
+                            borderColor: [
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(116, 149, 187, 1)',
+                                'rgba(99, 215, 138, 1)',
+                                'rgba(88, 95, 221, 1)'
+                            ],
+                            borderWidth: 1,
+                            hoverOffset: 4
+                        }]
+                    }
+                });
+
+                //Grafco de Barras
+                var ctxBar = document.getElementById('bar-chart').getContext('2d')
+                new Chart(ctxBar, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Agos', 'Sep', 'Oct', 'Nov', 'Dic'],
+                        datasets: [{
+                            label: '# visitas',
+                            data: [50, 19, 13, 20, 10, 20, 30, 10, 6, 12, 18, 9],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',  // Red
+                                'rgba(54, 162, 235, 0.2)',  // Blue
+                                'rgba(255, 206, 86, 0.2)',  // Yellow
+                                'rgba(75, 192, 192, 0.2)',  // Green
+                                'rgba(153, 102, 255, 0.2)', // Purple
+                                'rgba(255, 159, 64, 0.2)',  // Orange
+                                'rgba(255, 99, 132, 0.2)',  // Red
+                                'rgba(153, 102, 255, 0.2)', // Purple
+                                'rgba(128, 128, 128, 0.2)', // Grey
+                                'rgba(209, 179, 175, 0.2)', // 
+                                'rgba(165, 42, 42, 0.2)',   // Brown
+                                'rgba(54, 162, 235, 0.2)'   // Blue
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',  // Red
+                                'rgba(54, 162, 235, 1)',  // Blue
+                                'rgba(255, 206, 86, 1)',  // Yellow
+                                'rgba(75, 192, 192, 1)',  // Green
+                                'rgba(153, 102, 255, 1)', // Purple
+                                'rgba(255, 159, 64, 1)',  // Orange
+                                'rgba(255, 99, 132, 1)',  // Red
+                                'rgba(153, 102, 255, 1)', // Purple
+                                'rgba(128, 128, 128, 1)', // Grey
+                                'rgba(209, 179, 175, 1)', // 
+                                'rgba(165, 42, 42, 1)',   // Brown
+                                'rgba(54, 162, 235, 1)'   // Blue
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            });
+
+        </script>
+    </main>
+
+    <footer>
+        <div class="suscribir-fondo d-flex justify-content-center">
+            <div class="suscribir d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class="suscribir-texto text-center text-white mb-3 mb-md-0">
+                    <h3>Suscribete para un descuento exclusivo del 30%</h3>
+                </div>
+                <div class="suscribir-email d-flex flex-column flex-md-row align-items-center">
+                    <input type="email" class="form-control mb-2 mb-md-0 mr-md-2">
+                    <input type="button" class="btn btn-light" value="Suscribirse" />
+                </div>
+            </div>
+        </div>
+        <div class="datos-fondo">
+            <div class="datos container">
+                <div class="row">
+                    <div class="descripcion col-md-3">
+                        <h2>Destinos</h2>
+                        <p>Contactate con nosotros y empieza una nueva experiencia inolvidable.</p>
+                    </div>
+                    <div class="enlaces col-md-3">
+                        <h2>Enlaces</h2>
+                        <a href="inicio.html">Inicio</a><br><br>
+                        <a href="reservas.html">Reservas</a><br><br>
+                        <a href="mis-actividades.html">Mis Actividades</a><br><br>
+                        <a href="sobre-nosotros.html">Sobre Nosotros</a><br><br>
+                        <a href="centro-de-ayuda.html">Centro de Ayuda</a><br><br>
+                        <a href="landing-page-1.html">Landing Page</a><br><br>
+                        <a id="dashboard-link-footer" href="dashboard-1.html">Dashboard</a>
+                    </div>
+                    <div class="conectate col-md-3">
+                        <h2>Conectate</h2>
+                        <p>+1 12345 67890</p>
+                        <p>destinos@gmail.com</p>
+                        <p>Los Olivos, 74354, Perú</p>
+                    </div>
+                    <div class="ig-imagenes col-md-3">
+                        <p>Siguenos en @Instagram</p>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(1).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(2).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(3).png" class="img-fluid">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(4).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(5).png" class="img-fluid">
+                            </div>
+                            <div class="col-4 mb-3">
+                                <img src="recursos/ig(6).png" class="img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright text-center">
+            <p>© 2024 Todos los Derechos Reservados</p>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
